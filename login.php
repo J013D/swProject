@@ -20,6 +20,8 @@ if(isset($_SESSION['loggedin'])){
 	 	<input type="password" name="password" class="input" placeholder="رمز ..."><br>
 	 	<input type="submit" name="do-login" value="ورود"><br>
 		<a href="register.php">آیا قبلا ثبت نام نکرده اید؟</a>
+		<br><a href="mainPage.php">رفتن به صفحه اصلی سایت</a>
+	 
 	 </form>
 	</div>
 	

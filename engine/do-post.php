@@ -20,13 +20,15 @@ $reg = mysqli_query($db, "INSERT INTO posts (userEmail,userName, head, number, t
 if($reg){
 		echo 'پست شما ارسال شد';
 		?><br><a href="../showPostPage.php">همه ی پست های شما</a>
+	 <br><a href="../mainPage.php">رفتن به صفحه ی اصلی سایت</a>
 	 <?php
 	}else{
 		echo 'پست شما ارسال نشد';
 		echo "<a href=\"javascript:history.go(-1)\">برگشتن به صفحه ی قبل</a>";
 		?>
 		<br><a href="../showPostPage.php">همه ی پست های شما</a>
-	
+			<br><a href="../mainPage.php">رفتن به صفحه ی اصلی سایت</a>
+
 	<?php }		
 
 

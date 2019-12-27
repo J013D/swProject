@@ -28,6 +28,8 @@ if(isset($_SESSION['loggedin'])){
 			</div>
 			<input type="submit" name="do-register" value="ثبت نام"><br>
 			<a href="login.php">آیا قبلا در سایت ثبت نام کرده اید؟ وارد شوید</a>
+	 <br><a href="mainPage.php">رفتن به صفحه اصلی سایت</a>
+	 
 	 
 		</form>
 	</div>

@@ -19,5 +19,18 @@ body{
 	font-family: tahoma;
 }
 
+#posts{
+}
+#posts .post{
+background: #E9EAED;
+	text-align: center;
+	width: 550px;
+	height: 600px;
+	margin: auto;
+	padding: 20px;
+	border-radius: 20px;
+}
+
+
 
 

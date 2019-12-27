@@ -33,6 +33,8 @@ $masterr ='master';
 		<a href="showPostPage.php">نمایش پست ها</a>
 		<?php } ?>
 		<br>
+		<a href="mainPage.php">رفتن به صفحه اصلی وب سایت</a>
+		<br>
 		<a href="logout.php">خروج از حساب کاربری</a>
 		<br>
 		</div>
