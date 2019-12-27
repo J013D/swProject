@@ -30,6 +30,7 @@ $masterr ='master';
 		<input type="submit" name="postPage" value="ارسال پست">
 		<input type="submit" name="delPostPage" value="حذف پست" disabled>
 		<input type="submit" name="editPostPage" value="ویرایش پست" disabled>
+		<a href="showPostPage.php">نمایش پست ها</a>
 		<?php } ?>
 		<br>
 		<a href="logout.php">خروج از حساب کاربری</a>
