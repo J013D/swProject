@@ -62,9 +62,9 @@ while($fetch = mysqli_fetch_array($sql)){
 					?>
 					<br>
 					<form action="engine/do-commentAccept.php" method="post">
-					<input type="submit" name="allow" value="تایید">
+					<input type="submit" name="group1" value="تایید" >
 					<input type="hidden" name="idcom" value="<?php echo $commentId; ?>">
-					<input type="submit" name="disallow" value="عدم تایید"> <br>
+					<input type="submit" name="group1" value="عدم تایید"> <br>
 					</form>
 					<br>
 					<br>

@@ -8,8 +8,8 @@ else{
 	$idcom=$_POST['idcom'];
 }
 
-
-if($_POST['allow']){
+echo $_POST['group1'];
+if($_POST['group1']=="تایید"){
 	$value="allow";
 	$register = mysqli_query($db, "UPDATE comments SET acceptability='$value' WHERE id='$idcom' ");
 	echo "کامنت توسط شما تایید و نمایش داده خواهد شد";
