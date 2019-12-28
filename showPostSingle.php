@@ -19,6 +19,10 @@ $_SESSION['idOfPost']=$idd;
 $sql = mysqli_query($db, "SELECT * FROM posts WHERE id='$idd'");
 $fetch = mysqli_fetch_array($sql); 
 
+$sql2 = mysqli_query($db, "SELECT * FROM comments WHERE idOfPosts='$idd'");
+$fetch2 = mysqli_fetch_array($sql2); 
+
+
 
 ?>
 
@@ -58,13 +62,47 @@ $fetch = mysqli_fetch_array($sql);
 	?>
 	
 	<?php //کامنت ?>
+	 <br>
+	 <hr>
+		<h4>نظرات</h4>
 	 
+	 <div>
+	 <?php
+		while($fetch2 = mysqli_fetch_array($sql2)){ 
+			if($fetch2['acceptability']=="allow"){
+				?> 
+				<p> <?php echo "نظر منتشر شده توسط ".$fetch2['name']; ?> </p>			
+				<?php $tim=$fetch2['time'];
+				$rat=$fetch2['rating'];
+					if($rat=="yes"){
+						$like="پسندید";
+					}
+					else{
+						$like="نپسندید";
+					}
+					echo "در تاریخ و ساعت ".$tim ?> </br>
+					<?php echo " که پست را ".$like; ?> </br>
+					<?php $txt2=$fetch2['text'];
+					echo "متن نظر: ".$txt2;
+					?>
+					</br>
+					</br>
+					<?php
+					} //end of if	
+				} //end of while
+	 ?>
+	</div>
+	 
+	 
+	 
+	 
+	 <br>
+	 <hr>
 	<form action="/project/engine/do-commenting.php" method="post">
 		<h4>درج نظر</h4>
 		
 		<?php
 		if ($userNameVis==""){ ?>
-		 <br>
 		 <input type="text" name="userNameComment" placeholder="نام شما ..." required="required" ><br>
 		 <input type="text" name="userEmailComment" placeholder="ایمیل شما ..." required="required" ><br>
 		 <?php
@@ -75,19 +113,14 @@ $fetch = mysqli_fetch_array($sql);
 		}
 		?>
 		<p>امتیاز شما به پست</p>
-			<span>1</span>
-			<input type="radio" name="ratingComment"  value='1'  />
-			<span>2</span>
-			<input type="radio" name="ratingComment"  value='2' />
-			<span>3</span>
-			<input type="radio" name="ratingComment"  value='3'  />
-			<span>4</span>
-			<input type="radio" name="ratingComment"  value='4' />
-			<span>5</span>
-			<input type="radio" name="ratingComment"  value='5' checked />
-			<input type="text" name="websiteComment"  placeholder="وبسایت شما ..."><br>		
+			<span>پسندیدن</span>
+			<input type="radio" name="group1"  value='yes' checked /> <br>
+			<span>نپسندیدن</span>
+			<input type="radio" name="group1"  value='no'  />
+						
+				
 			<p>شرح نظر</p>
-			<textarea name="textComment" rows="7" cols="35" required="required" ></textarea>
+			<textarea name="textComment" rows="8" cols="33" required="required" ></textarea>
 			
 		<input type="submit" name="do-posting" value="ارسال"> <br>
 		

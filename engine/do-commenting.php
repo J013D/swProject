@@ -25,27 +25,30 @@ else {
 $idOfPostComment = $_SESSION['idOfPost']; 
 $txtComment =  $_POST["textComment"];
 $acceptabilityComment="wait";
-$ratingComment= $_POST=["ratingComment"];
-$websiteomment= $_POST=["websiteComment"];
+//$ratingComment= $_POST=["group1"];
+$level= $_POST['group1']; //rating of post
+//$websiteComment= $_POST=["websiteComment"];
 
 date_default_timezone_set("Asia/Tehran");
 $timeComment=date("Y/m/d")." ". date("h:i:sa");
 
 
+$reg = mysqli_query($db, "INSERT INTO comments (idOfPosts, text, acceptability, name, email, rating, time) VALUES ('$idOfPostComment', '$txtComment', '$acceptabilityComment', '$userNameComment', '$user_emailComment', '$level', '$timeComment')");
+	
+
+if($reg){
+		echo 'کامنت شما ارسال شد و پس از تایید نمایش داده خواهد شد';
+		$_SESSION['idOfPost']="used"; //آیدی پست پاک شود تا برای کامنت بعدی مکل ایجاد نکند
+		?> <br><?php
+		echo "<a href=\"javascript:history.go(-1)\">برگشتن به صفحه ی قبل</a>";
+		?>
+		<br><a href="../mainPage.php">رفتن به صفحه ی اصلی سایت</a>
+	 <?php
+	}else{
+		echo 'کامن شما ارسال نشد'; ?> <br><?php
+		echo "<a href=\"javascript:history.go(-1)\">برگشتن به صفحه ی قبل</a>";
+		?>
+		<br><a href="../mainPage.php">رفتن به صفحه ی اصلی سایت</a>
+	
+	<?php }	
 ?> 
-
-
-
-
-
-
-
-
-
-
-
-
-
- <?php
-$_SESSION['idOfPost']="used";
- ?>

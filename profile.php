@@ -26,11 +26,13 @@ $masterr ='master';
 		echo "امروز: " . date("Y/m/d") . "<br>";
 		?>
 		
-		<?php if($lvl==$masterr){ ?>
+		<?php if($lvl==$masterr){ ?> <?php //اگر این کاربر استاد است ?>
 		<input type="submit" name="postPage" value="ارسال پست">
 		<input type="submit" name="delPostPage" value="حذف پست" disabled>
 		<input type="submit" name="editPostPage" value="ویرایش پست" disabled>
-		<a href="showPostPage.php">نمایش پست ها</a>
+		<a href="showPostPage.php">نمایش پست ها</a> <br>
+		<a href="commentAccept.php">تایید نظرات</a>
+		
 		<?php } ?>
 		<br>
 		<a href="mainPage.php">رفتن به صفحه اصلی وب سایت</a>
